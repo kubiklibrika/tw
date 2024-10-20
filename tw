@@ -1,0 +1,12 @@
+
+docker run -d
+    --sysctl net.ipv4.ping_group_range="0 2147483647"
+    --env TWINGATE_NETWORK="zamchalov"
+    --env TWINGATE_ACCESS_TOKEN="eyJhbGciOiJFUzI1NiIsImtpZCI6ImlpN0RBYjRSRk5DN21QUTBmeEM3amV6NDRPVVNON3VxU0xwbS0zUzdIQVUiLCJ0eXAiOiJEQVQifQ.eyJudCI6IkFOIiwiYWlkIjoiMzU5MjM4IiwiZGlkIjoiMTcxNDk5NyIsImp0aSI6ImQ4NTcxNThlLTllYzEtNDBmYS04MDE2LThmYzY2NmY0NjIwYyIsImlzcyI6InR3aW5nYXRlIiwiYXVkIjoiemFtY2hhbG92IiwiZXhwIjoxNzI5NDM0MjUyLCJpYXQiOjE3Mjk0MzA2NTIsInZlciI6IjQiLCJ0aWQiOiI5NjA0NyIsInJudyI6MTcyOTQzMDk4NSwicm5ldGlkIjoiMTMxNzQ1In0.a_FwIgw2aoABu9KkSSWYoHQDTSCyT1R4ReoGXeD4c3QK4px8GmJIIRMpG4RNZa1v315WGONIgdy1gQHpQE9H5Q"
+    --env TWINGATE_REFRESH_TOKEN="xMC_IeYnD2-Q30iYe7ECvGXpcVbpgvFxwHxMJKbEs0YPSxXzGsmk5_vc_ijNFSxsaP7P15kkUWvzeEKR2bmJNaxPXTA7LKo7CvxZQ0NJeIq1Z7BmPRL3oDPevRV73Pzfy9mIvA"
+    --env TWINGATE_LABEL_HOSTNAME="`hostname`"
+    --env TWINGATE_LABEL_DEPLOYED_BY="docker"
+    --name "twingate-adorable-adder"
+    --restart=unless-stopped
+    --pull=always
+    twingate/connector:1
